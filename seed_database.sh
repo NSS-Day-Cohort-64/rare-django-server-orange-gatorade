@@ -15,3 +15,4 @@ python3 manage.py loaddata posts
 python3 manage.py loaddata post_tags
 python3 manage.py loaddata post_reactions
 python3 manage.py loaddata subscriptions
+python3 manage.py loaddata comments
