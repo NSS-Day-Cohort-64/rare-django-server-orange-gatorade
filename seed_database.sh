@@ -8,3 +8,4 @@ python3 manage.py migrate gatoradeapi
 python3 manage.py loaddata users
 python3 manage.py loaddata tokens
 python3 manage.py loaddata authors
+python3 manage.py loaddata categories
