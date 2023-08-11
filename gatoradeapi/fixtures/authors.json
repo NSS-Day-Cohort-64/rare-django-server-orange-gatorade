@@ -1,0 +1,56 @@
+[
+    {
+        "model": "gatoradeapi.author",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "Some interesting information about this user who is definitely a person, etc",
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+        }
+    },
+    {
+        "model": "gatoradeapi.author",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "bio": "Some interesting information about this user who is definitely a person, etc",
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+        }
+    },
+    {
+        "model": "gatoradeapi.author",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "bio": "Some interesting information about this user who is definitely a person, etc",
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+        }
+    },
+    {
+        "model": "gatoradeapi.author",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "bio": "Some interesting information about this user who is definitely a person, etc",
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+        }
+    },
+    {
+        "model": "gatoradeapi.author",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "bio": "Some interesting information about this user who is definitely a person, etc",
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+        }
+    },
+    {
+        "model": "gatoradeapi.author",
+        "pk": 6,
+        "fields": {
+            "user": 6,
+            "bio": "Some interesting information about this user who is definitely a person, etc",
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+        }
+    }
+]
