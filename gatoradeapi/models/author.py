@@ -6,6 +6,7 @@ class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=500)
     profile_image_url = models.CharField(max_length=500)
+    followed_authors = models.ManyToManyField('self', through='Subscription', symmetrical=False, related_name='followers')
 
     @property
     def full_name(self):

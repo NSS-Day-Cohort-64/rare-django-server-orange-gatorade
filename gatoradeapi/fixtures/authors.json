@@ -5,7 +5,8 @@
         "fields": {
             "user": 1,
             "bio": "Some interesting information about this user who is definitely a person, etc",
-            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png",
+            "followed_authors": []
         }
     },
     {
@@ -14,7 +15,8 @@
         "fields": {
             "user": 2,
             "bio": "Some interesting information about this user who is definitely a person, etc",
-            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png",
+            "followed_authors": []
         }
     },
     {
@@ -23,7 +25,8 @@
         "fields": {
             "user": 3,
             "bio": "Some interesting information about this user who is definitely a person, etc",
-            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png",
+            "followed_authors": []
         }
     },
     {
@@ -32,7 +35,8 @@
         "fields": {
             "user": 4,
             "bio": "Some interesting information about this user who is definitely a person, etc",
-            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png",
+            "followed_authors": []
         }
     },
     {
@@ -41,7 +45,8 @@
         "fields": {
             "user": 5,
             "bio": "Some interesting information about this user who is definitely a person, etc",
-            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png",
+            "followed_authors": []
         }
     },
     {
@@ -50,7 +55,8 @@
         "fields": {
             "user": 6,
             "bio": "Some interesting information about this user who is definitely a person, etc",
-            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png"
+            "profile_image_url": "https://static.thenounproject.com/png/1768486-200.png",
+            "followed_authors": []
         }
     }
 ]
