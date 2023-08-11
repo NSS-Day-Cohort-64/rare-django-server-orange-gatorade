@@ -1,0 +1,47 @@
+[
+    {
+        "model": "gatoradeapi.post",
+        "pk": 1,
+        "fields": {
+            "title": "Turn your living room into a ball pit with one simple step",
+            "author": 2,
+            "category": 1,
+            "publication_date": "2022-12-29",
+            "image_url": "https://images.unsplash.com/photo-1498940757830-82f7813bf178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+            "approved": true,
+            "tags": [],
+            "user_reactions": []
+        }
+    },
+    {
+        "model": "gatoradeapi.post",
+        "pk": 2,
+        "fields": {
+            "title": "The trick to finding the best Aldi Finds that Aldi doesn't want you to find!",
+            "author": 1,
+            "category": 3,
+            "publication_date": "2023-04-19",
+            "image_url": "https://images.unsplash.com/photo-1616166492345-15931ba67ca5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+            "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+            "approved": true,
+            "tags": [],
+            "user_reactions": []
+        }
+    },
+    {
+        "model": "gatoradeapi.post",
+        "pk": 3,
+        "fields": {
+            "title": "Dance like you mean it and aint nobody's business",
+            "author": 3,
+            "category": 4,
+            "publication_date": "2023-07-29",
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbestanimations.com%2FMusic%2FDancers%2Ffunny-dance%2Ffunny-dance-dancing-animated-gif-image-11.gif&f=1&nofb=1&ipt=85fcee1d7fc28b30309e1e6746cdc2612b52f51e38d7dc25e823f7f118cd7de4&ipo=images",
+            "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+            "approved": true,
+            "tags": [],
+            "user_reactions": []
+        }
+    }
+]
