@@ -31,7 +31,6 @@ router.register(r'posts', PostView, 'post')
 router.register(r'tags', TagView, 'tag')
 router.register(r'reactions', ReactionView, 'reaction')
 
-
 urlpatterns = [
     path('register', register_user),
     path('login', login_user),
