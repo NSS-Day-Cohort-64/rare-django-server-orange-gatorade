@@ -19,12 +19,18 @@ from django.conf.urls import include
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from gatoradeapi.views import PostView, TagView, ReactionView
+from gatoradeapi.views import (register_user, login_user, AuthorViewSet, CategoryViewSet,
+                               CommentViewSet, SubscriptionViewSet, PostView, TagView, ReactionView)
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'authors', AuthorViewSet, 'author')
+router.register(r'categories', CategoryViewSet, 'category')
+router.register(r'comments', CommentViewSet, 'comment')
+router.register(r'subscriptions', SubscriptionViewSet, 'subscription')
 router.register(r'posts', PostView, 'post')
 router.register(r'tags', TagView, 'tag')
 router.register(r'reactions', ReactionView, 'reaction')
+
 
 urlpatterns = [
     path('register', register_user),
