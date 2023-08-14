@@ -19,8 +19,7 @@ from django.conf.urls import include
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from gatoradeapi.views import (register_user, login_user, AuthorViewSet, CategoryViewSet,
-                               CommentViewSet, SubscriptionViewSet, PostView, TagView, ReactionView)
+from gatoradeapi.views import (register_user, login_user, AuthorViewSet, CategoryViewSet, CommentViewSet, SubscriptionViewSet, PostView, TagView, ReactionView)
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', AuthorViewSet, 'author')
