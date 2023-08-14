@@ -9,9 +9,24 @@ from gatoradeapi.models import Comment
 class CommentViewSet(ViewSet):
 
     def retrieve(self, request, pk=None):
-        comments = Comment.objects.filter(post_id=pk)
+        comment = Comment.objects.get(pk=pk)
+        serializer = CommentSerializer(comment, many=False)
+        return Response(serializer.data)
+  
+
+    def list(self, request):
+
+        comments = []
+        comments = Comment.objects.all()
+        post_id = request.query_params.get('post_id', None)
+        if post_id is not None:
+            comments = Comment.objects.filter(post_id=post_id)
+
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
+        
+
+
 
 
     def create(self, request):
