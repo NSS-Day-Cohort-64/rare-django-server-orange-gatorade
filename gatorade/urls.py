@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from gatoradeapi.views import PostView, TagView
+from gatoradeapi.views import PostView, TagView, ReactionView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostView, 'post')
 router.register(r'tags', TagView, 'tag')
+router.register(r'reactions', ReactionView, 'reaction')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
