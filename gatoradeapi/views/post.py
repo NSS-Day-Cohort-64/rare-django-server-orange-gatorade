@@ -1,5 +1,6 @@
 """View module for handling requests about Posts"""
 from django.db.models import Q
+from django.contrib.auth.models import User
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
@@ -103,10 +104,19 @@ class PostView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('is_superuser', )
+
+
 class AuthorSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=False)
+
     class Meta:
         model = Author
-        fields = ('username', )
+        fields = ('username', 'user')
+        depth = 1
 
 
 class CategorySerializer(serializers.ModelSerializer):
