@@ -1,0 +1,50 @@
+[
+    {
+        "model": "gatoradeapi.reaction",
+        "pk": 1,
+        "fields": {
+            "label": "Happy",
+            "image_url": "https://pngtree.com/so/happy"
+        }
+    },
+    {
+        "model": "gatoradeapi.reaction",
+        "pk": 2,
+        "fields": {
+            "label": "Laugh",
+            "image_url": "https://pngtree.com/freepng/open-mouth-laughing-expression-illustration_4676475.html"
+        }
+    },
+    {
+        "model": "gatoradeapi.reaction",
+        "pk": 3,
+        "fields": {
+            "label": "Embarrassed",
+            "image_url": "https://png.pngtree.com/element_our/png/20181227/emoticons-stickers-rabbit-be-embarrassed-png_301809.jpg"
+        }
+    },
+    {
+        "model": "gatoradeapi.reaction",
+        "pk": 4,
+        "fields": {
+            "label": "Sad",
+            "image_url": "https://pngtree.com/freepng/hand-drawn-illustration-cartoon-creative-emoticon-pack-design-crying_5497862.html"
+        }
+    },
+    {
+        "model": "gatoradeapi.reaction",
+        "pk": 5,
+        "fields": {
+            "label": "Like",
+            "image_url": "https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-vector-like-icon-png-image_695362.jpg"
+        }
+    },
+    {
+        "model": "gatoradeapi.reaction",
+        "pk": 6,
+        "fields": {
+            "label": "Alien Party",
+            "image_url": "https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-pink-and-yellow-one-eyed-party-monster-with-a-party-hat-png-image_4828405.png"
+        }
+    }
+]

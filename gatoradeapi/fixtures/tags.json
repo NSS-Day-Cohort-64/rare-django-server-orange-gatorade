@@ -1,0 +1,58 @@
+[
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 1,
+        "fields": {
+            "label": "Interesting"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 2,
+        "fields": {
+            "label": "Quick Read"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 3,
+        "fields": {
+            "label": "Controversial"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 4,
+        "fields": {
+            "label": "Long Form"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 5,
+        "fields": {
+            "label": "World"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 6,
+        "fields": {
+            "label": "Politics"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 7,
+        "fields": {
+            "label": "Edgy"
+        }
+    },
+    {
+        "model": "gatoradeapi.tag",
+        "pk": 8,
+        "fields": {
+            "label": "Investigative"
+        }
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "model": "gatoradeapi.comment",
+        "pk": 1,
+        "fields": {
+            "author": 1,
+            "post": 2,
+            "content": "Amazing. Just really fantastic"
+        }
+    },
+    {
+        "model": "gatoradeapi.comment",
+        "pk": 2,
+        "fields": {
+            "author": 2,
+            "post": 3,
+            "content": "Wowee!"
+        }
+    },
+    {
+        "model": "gatoradeapi.comment",
+        "pk": 3,
+        "fields": {
+            "author": 3,
+            "post": 1,
+            "content": "Life changing, really"
+        }
+    }
+]

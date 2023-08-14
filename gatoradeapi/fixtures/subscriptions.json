@@ -1,0 +1,47 @@
+[
+    {
+        "model": "gatoradeapi.subscription",
+        "pk": 1,
+        "fields": {
+            "author": 1,
+            "follower": 2,
+            "date_subscribed": "2023-08-10"
+        }
+    },
+    {
+        "model": "gatoradeapi.subscription",
+        "pk": 2,
+        "fields": {
+            "author": 1,
+            "follower": 3,
+            "date_subscribed": "2023-08-10"
+        }
+    },
+    {
+        "model": "gatoradeapi.subscription",
+        "pk": 3,
+        "fields": {
+            "author": 3,
+            "follower": 1,
+            "date_subscribed": "2023-08-10"
+        }
+    },
+    {
+        "model": "gatoradeapi.subscription",
+        "pk": 4,
+        "fields": {
+            "author": 4,
+            "follower": 1,
+            "date_subscribed": "2023-08-10"
+        }
+    },
+    {
+        "model": "gatoradeapi.subscription",
+        "pk": 5,
+        "fields": {
+            "author": 2,
+            "follower": 3,
+            "date_subscribed": "2023-08-10"
+        }
+    }
+]

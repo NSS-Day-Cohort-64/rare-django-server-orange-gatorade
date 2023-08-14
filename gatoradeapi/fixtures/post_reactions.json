@@ -1,0 +1,47 @@
+[
+    {
+        "model": "gatoradeapi.postreaction",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "reaction": 1,
+            "user": 3
+        }
+    },
+    {
+        "model": "gatoradeapi.postreaction",
+        "pk": 2,
+        "fields": {
+            "post": 2,
+            "reaction": 5,
+            "user": 2
+        }
+    },
+    {
+        "model": "gatoradeapi.postreaction",
+        "pk": 3,
+        "fields": {
+            "post": 2,
+            "reaction": 1,
+            "user": 4
+        }
+    },
+    {
+        "model": "gatoradeapi.postreaction",
+        "pk": 4,
+        "fields": {
+            "post": 3,
+            "reaction": 5,
+            "user": 1
+        }
+    },
+    {
+        "model": "gatoradeapi.postreaction",
+        "pk": 5,
+        "fields": {
+            "post": 3,
+            "reaction": 3,
+            "user": 2
+        }
+    }
+]

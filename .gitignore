@@ -161,4 +161,4 @@ cython_debug/
 *.sqlite3
 
 # Migrations
-/levelupapi/migrations/*
+/gatoradeapi/migrations/*
