@@ -17,13 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from gatoradeapi.views import AuthorViewSet, CategoryViewSet, CommentViewSet, SubscriptionViewSet
+from gatoradeapi.views import AuthorViewSet, CategoryViewSet, CommentViewSet, SubscriptionViewSet,PostView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', AuthorViewSet , 'author')
 router.register(r'categories', CategoryViewSet, 'category')
 router.register(r'comments', CommentViewSet, 'comment')
 router.register(r'subscriptions', SubscriptionViewSet, 'subscription')
+router.register(r'posts', PostView, 'post')
 
 
 
