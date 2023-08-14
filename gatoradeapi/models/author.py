@@ -31,10 +31,3 @@ class Author(models.Model):
 
     def is_active(self):
         return self.user.is_active
-
-    def token_key(self):
-        try:
-            token = Token.objects.get(user=self)
-            return token.key
-        except Token.DoesNotExist:
-            return None
