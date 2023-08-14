@@ -15,8 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from rest_framework import routers
+from gatoradeapi.views import AuthorViewSet, CategoryViewSet, CommentViewSet, SubscriptionViewSet
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'authors', AuthorViewSet , 'author')
+router.register(r'categories', CategoryViewSet, 'category')
+router.register(r'comments', CommentViewSet, 'comment')
+router.register(r'subscriptions', SubscriptionViewSet, 'subscription')
+
+
+
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
