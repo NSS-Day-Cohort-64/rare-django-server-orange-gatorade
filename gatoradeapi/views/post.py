@@ -25,10 +25,16 @@ class PostView(ViewSet):
             post = post.filter(category=request.query_params['category'][0])
         # Handle filtering based on tags
         if "tag" in request.query_params:
+            # Get a list of all tag ids from the query parameters
             tag_ids = request.query_params.getlist('tag')
+            # Create an empty Q object to build dynamic queries
             q_objects = Q()
+            # Iterate through each tag ID and create an OR condition with Q
             for tag_id in tag_ids:
+                # Adds the current tags query to q_objects using the OR clause
+                # Effectively builds a query like: q_objects = 1 OR 2 OR 3 as the loop iterates
                 q_objects |= Q(tags=tag_id)
+            # Filter the post based on the intricate q_objects query
             post = post.filter(q_objects)
         serializer = PostSerializer(post, many=True)
         return Response(serializer.data)
