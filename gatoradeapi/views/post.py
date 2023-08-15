@@ -20,10 +20,7 @@ class PostView(ViewSet):
 
         post = Post.objects.all().order_by('-id')
         if "user" in request.query_params:
-            user_token = request.query_params['user']
-            auth_token = Token.objects.get(key=user_token)
-            chosen_user = User.objects.get(id=auth_token.user_id)
-            post = post.filter(author__user=chosen_user)
+            post = post.filter(author__user=request.auth.user)
         if "approved" in request.query_params:
             post = post.filter(approved=True)
         if "author" in request.query_params:
@@ -114,21 +111,21 @@ class AuthorSerializer(serializers.ModelSerializer):
 
     # Declares token_key and initializes it with the SerializerMethodField
     # Said class takes a method in the for of get_{field_name}
-    token_key = serializers.SerializerMethodField()
+    # token_key = serializers.SerializerMethodField()
 
     class Meta:
         model = Author
-        fields = ('username', 'token_key')
+        fields = ('username',)
 
     # This is the method being called above
-    def get_token_key(self, author):
-        try:
+    #def get_token_key(self, author):
+        #try:
             # Here it finds the Token with a user value equal to the author.user value
-            token = Token.objects.get(user=author.user)
+            #token = Token.objects.get(user=author.user)
             # Then it returns the key
-            return token.key
-        except Token.DoesNotExist:
-            return None
+            #return token.key
+        #except Token.DoesNotExist:
+            #return None
 
 
 class CategorySerializer(serializers.ModelSerializer):
