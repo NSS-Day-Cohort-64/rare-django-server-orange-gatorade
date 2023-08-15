@@ -1,5 +1,7 @@
 """View module for handling requests about Posts"""
 from django.db.models import Q
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
@@ -16,7 +18,9 @@ class PostView(ViewSet):
             Response -- JSON serialized list of Posts
         """
 
-        post = Post.objects.all()
+        post = Post.objects.all().order_by('-id')
+        if "user" in request.query_params:
+            post = post.filter(author__user=request.auth.user)
         if "approved" in request.query_params:
             post = post.filter(approved=True)
         if "author" in request.query_params:
@@ -104,9 +108,24 @@ class PostView(ViewSet):
 
 
 class AuthorSerializer(serializers.ModelSerializer):
+
+    # Declares token_key and initializes it with the SerializerMethodField
+    # Said class takes a method in the for of get_{field_name}
+    # token_key = serializers.SerializerMethodField()
+
     class Meta:
         model = Author
-        fields = ('username', )
+        fields = ('username',)
+
+    # This is the method being called above
+    #def get_token_key(self, author):
+        #try:
+            # Here it finds the Token with a user value equal to the author.user value
+            #token = Token.objects.get(user=author.user)
+            # Then it returns the key
+            #return token.key
+        #except Token.DoesNotExist:
+            #return None
 
 
 class CategorySerializer(serializers.ModelSerializer):
