@@ -115,7 +115,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Author
-        fields = ('username',)
+        fields = ('id', 'username',)
 
     # This is the method being called above
     #def get_token_key(self, author):
