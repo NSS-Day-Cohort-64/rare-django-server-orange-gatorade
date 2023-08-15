@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from gatoradeapi.models import Comment
+from gatoradeapi.models import Comment, Author
 
 
 
@@ -30,8 +30,10 @@ class CommentViewSet(ViewSet):
 
 
     def create(self, request):
+
+        
         comment = Comment.objects.create(
-            author_id=request.data["author_id"],
+            author = Author.objects.get(user=request.auth.user),
             post_id=request.data["post_id"],
             content=request.data["content"]
         )
@@ -50,11 +52,17 @@ class CommentViewSet(ViewSet):
         comment.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = ('id', 'first_name', 'last_name')
 
 class CommentSerializer(serializers.ModelSerializer):
+    author = AuthorSerializer(many=False)
+    
     class Meta:
         model = Comment
-        fields = ('id', 'author_id', 'post_id', 'content')
+        fields = ('id', 'author', 'post_id', 'content', 'date_created',)
 
        
         
