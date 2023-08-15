@@ -18,7 +18,7 @@ class PostView(ViewSet):
             Response -- JSON serialized list of Posts
         """
 
-        post = Post.objects.all()
+        post = Post.objects.all().order_by('-id')
         if "user" in request.query_params:
             user_token = request.query_params['user']
             auth_token = Token.objects.get(key=user_token)
