@@ -131,13 +131,13 @@ class AuthorSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('label', )
+        fields = ('label', 'id')
 
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fields = ('label', )
+        fields = ('label', 'id')
 
 
 class UserReactionSerializer(serializers.ModelSerializer):
