@@ -59,7 +59,7 @@ class PostView(ViewSet):
         Returns
             Response -- JSON serialized Post instance
         """
-        author = Author.objects.get(pk=request.data["author"])
+        author = Author.objects.get(user=request.auth.user)
         category = Category.objects.get(pk=request.data["category"])
         tags = Tag.objects.filter(pk__in=request.data["tags"])
 
