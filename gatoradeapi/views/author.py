@@ -25,6 +25,9 @@ class AuthorViewSet(ViewSet):
                 authors = authors.filter(user__is_staff=True)
             elif request.query_params.get('is_staff') == 'false':
                 authors = authors.filter(user__is_staff=False)
+        
+        if "current" in request.query_params:
+            authors = authors.filter(user=request.auth.user)
 
         serializer = AuthorSerializer(authors, many=True)
         return Response(serializer.data)
