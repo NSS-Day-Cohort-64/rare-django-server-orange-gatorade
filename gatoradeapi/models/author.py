@@ -31,3 +31,6 @@ class Author(models.Model):
 
     def is_active(self):
         return self.user.is_active
+    
+    def email(self):
+        return self.user.email
