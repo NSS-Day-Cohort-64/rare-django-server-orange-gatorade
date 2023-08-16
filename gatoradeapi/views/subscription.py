@@ -10,6 +10,8 @@ class SubscriptionViewSet(ViewSet):
 
     def list(self, request):
         subscriptions = Subscription.objects.all()
+        if "follower" in request.query_params:
+            subscriptions = subscriptions.filter(follower=request.query_params['follower'][0])
         serializer = SubscriptionSerializer(subscriptions, many=True)
         return Response(serializer.data)
 
