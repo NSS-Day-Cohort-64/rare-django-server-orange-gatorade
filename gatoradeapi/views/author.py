@@ -69,7 +69,7 @@ class AuthorSerializer(serializers.ModelSerializer):
     followers = SubscriptionSerializer(many=True)
     class Meta:
         model = Author
-        fields = ('id', 'first_name', 'last_name', 'username', 'created_on', 'is_staff', 'is_active',  'bio', 'profile_image_url', 'followed_authors', 'followers')
+        fields = ('id', 'first_name', 'last_name', 'username', 'created_on', 'is_staff', 'is_active',  'bio', 'profile_image_url', 'followed_authors', 'followers', 'email')
 
 
      
