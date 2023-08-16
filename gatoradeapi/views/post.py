@@ -69,7 +69,7 @@ class PostView(ViewSet):
             category=category,
             image_url=request.data['image_url'],
             content=request.data['content'],
-            approved=False,
+            approved=author.is_staff(),
         )
 
         post.tags.set(tags)
