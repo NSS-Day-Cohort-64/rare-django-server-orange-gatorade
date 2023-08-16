@@ -91,6 +91,7 @@ class PostView(ViewSet):
         post.category = Category.objects.get(pk=request.data["category"])
         post.image_url = request.data["image_url"]
         post.content = request.data["content"]
+        post.approved = request.data["approved"]
         post.tags.set(tags)
         post.save()
 
