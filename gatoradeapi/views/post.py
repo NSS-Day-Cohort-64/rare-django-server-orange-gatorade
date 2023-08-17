@@ -27,6 +27,9 @@ class PostView(ViewSet):
             post = post.filter(author=request.query_params['author'][0])
         if "category" in request.query_params:
             post = post.filter(category=request.query_params['category'][0])
+        if "title" in request.query_params:
+            title_query = request.query_params['title']
+            post = post.filter(title__icontains=title_query)
         # Handle filtering based on tags
         if "tag" in request.query_params:
             # Get a list of all tag ids from the query parameters
@@ -158,4 +161,4 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'title', 'author', 'category', 'publication_date',
-                  'image_url', 'content', 'approved', 'tags', 'user_reactions')
+                  'image_url', 'content', 'approved', 'tags', 'user_reactions',)
