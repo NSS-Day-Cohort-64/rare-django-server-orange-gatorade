@@ -20,7 +20,8 @@ class SubscriptionViewSet(ViewSet):
         follower = Author.objects.get(pk=request.data["follower"])
         subscription = Subscription.objects.create(
             author=author,
-            follower=follower
+            follower=follower,
+            date_unsubscribed="0"
         )
 
         serializer = SubscriptionSerializer(subscription, many=False)
@@ -35,4 +36,4 @@ class SubscriptionViewSet(ViewSet):
 class SubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscription
-        fields = ('id', 'author', 'follower', 'date_subscribed')
+        fields = ('id', 'author', 'follower', 'date_subscribed', 'date_unsubscribed')
