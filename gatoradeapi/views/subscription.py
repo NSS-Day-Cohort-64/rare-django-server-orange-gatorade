@@ -16,6 +16,9 @@ class SubscriptionViewSet(ViewSet):
         if "author" in request.query_params:
             subscriptions = subscriptions.filter(
                 author=request.query_params['author'][0])
+        if "subscribed" in request.query_params:
+            subscriptions = subscriptions.filter(
+                subscribed=True)
         serializer = SubscriptionSerializer(subscriptions, many=True)
         return Response(serializer.data)
 
@@ -40,6 +43,10 @@ class SubscriptionViewSet(ViewSet):
         """
 
         subscription = Subscription.objects.get(pk=pk)
+        subscription.author=Author.objects.get(pk=request.data["author"])
+        subscription.follower=Author.objects.get(pk=request.data["follower"])
+        subscription.date_subscribed=request.data['date_subscribed']
+        subscription.date_unsubscribed=request.data['date_unsubscribed']
         subscription.subscribed = request.data['subscribed']
         subscription.save()
 
