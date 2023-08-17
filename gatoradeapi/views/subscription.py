@@ -11,7 +11,11 @@ class SubscriptionViewSet(ViewSet):
     def list(self, request):
         subscriptions = Subscription.objects.all()
         if "follower" in request.query_params:
-            subscriptions = subscriptions.filter(follower=request.query_params['follower'][0])
+            subscriptions = subscriptions.filter(
+                follower=request.query_params['follower'][0])
+        if "author" in request.query_params:
+            subscriptions = subscriptions.filter(
+                author=request.query_params['author'][0])
         serializer = SubscriptionSerializer(subscriptions, many=True)
         return Response(serializer.data)
 
@@ -27,7 +31,7 @@ class SubscriptionViewSet(ViewSet):
 
         serializer = SubscriptionSerializer(subscription, many=False)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+
     def update(self, request, pk):
         """Handle PUT requests for a Subscription
 
@@ -50,4 +54,5 @@ class SubscriptionViewSet(ViewSet):
 class SubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscription
-        fields = ('id', 'author', 'follower', 'date_subscribed', 'date_unsubscribed', 'subscribed')
+        fields = ('id', 'author', 'follower', 'date_subscribed',
+                  'date_unsubscribed', 'subscribed')
