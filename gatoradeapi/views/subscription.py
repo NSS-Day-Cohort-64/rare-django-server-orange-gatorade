@@ -21,7 +21,8 @@ class SubscriptionViewSet(ViewSet):
         subscription = Subscription.objects.create(
             author=author,
             follower=follower,
-            date_unsubscribed=None
+            date_unsubscribed=None,
+            subscribed=True
         )
 
         serializer = SubscriptionSerializer(subscription, many=False)
@@ -35,8 +36,7 @@ class SubscriptionViewSet(ViewSet):
         """
 
         subscription = Subscription.objects.get(pk=pk)
-        subscription.date_subscribed = request.data["date_subscribed"]
-        subscription.date_unsubscribed = request.data["date_subscribed"]
+        subscription.subscribed = request.data['subscribed']
         subscription.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -50,4 +50,4 @@ class SubscriptionViewSet(ViewSet):
 class SubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscription
-        fields = ('id', 'author', 'follower', 'date_subscribed', 'date_unsubscribed')
+        fields = ('id', 'author', 'follower', 'date_subscribed', 'date_unsubscribed', 'subscribed')

@@ -6,7 +6,8 @@
             "author": 1,
             "follower": 2,
             "date_subscribed": "2023-08-10T10:30:00Z",
-            "date_unsubscribed": null
+            "date_unsubscribed": null,
+            "subscribed": true
         }
     },
     {
@@ -16,7 +17,8 @@
             "author": 1,
             "follower": 3,
             "date_subscribed": "2023-08-10T23:59:59Z",
-            "date_unsubscribed": null
+            "date_unsubscribed": null,
+            "subscribed": true
         }
     },
     {
@@ -26,7 +28,8 @@
             "author": 3,
             "follower": 1,
             "date_subscribed": "2023-08-10T08:00:00Z",
-            "date_unsubscribed": null
+            "date_unsubscribed": null,
+            "subscribed": true
         }
     },
     {
@@ -36,7 +39,8 @@
             "author": 4,
             "follower": 1,
             "date_subscribed": "2023-08-10T18:45:00Z",
-            "date_unsubscribed": null
+            "date_unsubscribed": null,
+            "subscribed": true
         }
     },
     {
@@ -46,7 +50,8 @@
             "author": 2,
             "follower": 3,
             "date_subscribed": "2023-08-10T12:00:00Z",
-            "date_unsubscribed": null
+            "date_unsubscribed": null,
+            "subscribed": true
         }
     }
 ]
