@@ -21,11 +21,25 @@ class SubscriptionViewSet(ViewSet):
         subscription = Subscription.objects.create(
             author=author,
             follower=follower,
-            date_unsubscribed="0"
+            date_unsubscribed=None
         )
 
         serializer = SubscriptionSerializer(subscription, many=False)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def update(self, request, pk):
+        """Handle PUT requests for a Subscription
+
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+
+        subscription = Subscription.objects.get(pk=pk)
+        subscription.date_subscribed = request.data["date_subscribed"]
+        subscription.date_unsubscribed = request.data["date_subscribed"]
+        subscription.save()
+
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
         subscription = Subscription.objects.get(pk=pk)
