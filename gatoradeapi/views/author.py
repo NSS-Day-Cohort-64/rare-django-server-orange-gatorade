@@ -51,6 +51,7 @@ class AuthorViewSet(ViewSet):
         author.user.first_name = request.data["first_name"]
         author.user.last_name = request.data["last_name"]
         author.user.username = request.data["username"]
+        author.user.is_staff = request.data["is_staff"]
         author.user.save()
         author.bio = request.data["bio"]
         author.profile_image_url = request.data["profile_image_url"]
@@ -69,7 +70,7 @@ class AuthorSerializer(serializers.ModelSerializer):
     followers = SubscriptionSerializer(many=True)
     class Meta:
         model = Author
-        fields = ('id', 'first_name', 'last_name', 'username', 'created_on', 'is_staff', 'is_active',  'bio', 'profile_image_url', 'followed_authors', 'followers', 'email')
+        fields = ('id', 'first_name', 'last_name', 'username', 'created_on', 'is_staff', 'is_active',  'bio', 'profile_image_url', 'followed_authors', 'followers', 'email',)
 
 
      
