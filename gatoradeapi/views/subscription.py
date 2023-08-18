@@ -11,7 +11,14 @@ class SubscriptionViewSet(ViewSet):
     def list(self, request):
         subscriptions = Subscription.objects.all()
         if "follower" in request.query_params:
-            subscriptions = subscriptions.filter(follower=request.query_params['follower'][0])
+            subscriptions = subscriptions.filter(
+                follower=request.query_params['follower'][0])
+        if "author" in request.query_params:
+            subscriptions = subscriptions.filter(
+                author=request.query_params['author'][0])
+        if "subscribed" in request.query_params:
+            subscriptions = subscriptions.filter(
+                subscribed=True)
         serializer = SubscriptionSerializer(subscriptions, many=True)
         return Response(serializer.data)
 
@@ -20,11 +27,30 @@ class SubscriptionViewSet(ViewSet):
         follower = Author.objects.get(pk=request.data["follower"])
         subscription = Subscription.objects.create(
             author=author,
-            follower=follower
+            follower=follower,
+            date_unsubscribed=None,
+            subscribed=True
         )
 
         serializer = SubscriptionSerializer(subscription, many=False)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, pk):
+        """Handle PUT requests for a Subscription
+
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+
+        subscription = Subscription.objects.get(pk=pk)
+        subscription.author=Author.objects.get(pk=request.data["author"])
+        subscription.follower=Author.objects.get(pk=request.data["follower"])
+        subscription.date_subscribed=request.data['date_subscribed']
+        subscription.date_unsubscribed=request.data['date_unsubscribed']
+        subscription.subscribed = request.data['subscribed']
+        subscription.save()
+
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
         subscription = Subscription.objects.get(pk=pk)
@@ -35,4 +61,5 @@ class SubscriptionViewSet(ViewSet):
 class SubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscription
-        fields = ('id', 'author', 'follower', 'date_subscribed')
+        fields = ('id', 'author', 'follower', 'date_subscribed',
+                  'date_unsubscribed', 'subscribed')
