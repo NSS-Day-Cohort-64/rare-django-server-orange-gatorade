@@ -18,7 +18,7 @@ class PostView(ViewSet):
             Response -- JSON serialized list of Posts
         """
 
-        post = Post.objects.all().order_by('-id')
+        post = Post.objects.filter(author__user__is_active=True).order_by('-id')
         if "user" in request.query_params:
             post = post.filter(author__user=request.auth.user)
         if "approved" in request.query_params:
